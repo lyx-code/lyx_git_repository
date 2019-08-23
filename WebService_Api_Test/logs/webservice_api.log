@@ -1,0 +1,187 @@
+2019-08-23 10:00:54,905 : DEBUG  test_01_sendmcode :39  - ================发送短信验证码接口-测试用例开始执行================
+2019-08-23 10:00:54,906 : DEBUG  test_01_sendmcode :55  - ********************发送短信验证码成功*********************
+2019-08-23 10:00:55,119 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': '13317816495'}】
+2019-08-23 10:00:55,269 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:00:55,347 : INFO  test_01_sendmcode :78  - 断言成功，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:00:55,347 : DEBUG  test_01_sendmcode :55  - **********************ip地址为空**********************
+2019-08-23 10:00:55,587 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '', 'tmpl_id': '1', 'mobile': '17305269495'}】
+2019-08-23 10:00:55,676 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"faultcode": "soap:Server", "faultstring": "用户IP不能为空"}】
+2019-08-23 10:00:55,750 : ERROR  test_01_sendmcode :82  - 断言失败，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"faultcode": "soap:Server", "faultstring": "用户IP不能为空"}】
+2019-08-23 10:00:55,756 : DEBUG  test_01_sendmcode :55  - ********************tmpl_id为空*********************
+2019-08-23 10:00:56,713 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '', 'mobile': '13317893495'}】
+2019-08-23 10:00:56,803 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"faultcode": "soap:Client", "faultstring": "Unmarshalling Error: For input string: \"\" "}】
+2019-08-23 10:00:56,878 : ERROR  test_01_sendmcode :82  - 断言失败，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"faultcode": "soap:Client", "faultstring": "Unmarshalling Error: For input string: \"\" "}】
+2019-08-23 10:00:56,881 : DEBUG  test_01_sendmcode :55  - *********************mobile为空*********************
+2019-08-23 10:00:56,881 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': ''}】
+2019-08-23 10:00:56,969 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:57,046 : ERROR  test_01_sendmcode :82  - 断言失败，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:57,049 : DEBUG  test_01_sendmcode :55  - ********************ip地址格式不正确*********************
+2019-08-23 10:00:57,265 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '192.168.1', 'tmpl_id': '1', 'mobile': '13317890495'}】
+2019-08-23 10:00:57,405 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:00:57,481 : INFO  test_01_sendmcode :78  - 断言成功，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:00:57,481 : DEBUG  test_01_sendmcode :55  - *********************ip地址超出范围*********************
+2019-08-23 10:00:57,705 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '277.168.1.1', 'tmpl_id': '1', 'mobile': '17303781495'}】
+2019-08-23 10:00:57,800 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:57,887 : ERROR  test_01_sendmcode :82  - 断言失败，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:57,891 : DEBUG  test_01_sendmcode :55  - *******************mobile不足11位********************
+2019-08-23 10:00:57,891 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': '1680123'}】
+2019-08-23 10:00:57,987 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:58,079 : ERROR  test_01_sendmcode :82  - 断言失败，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:58,082 : DEBUG  test_01_sendmcode :55  - *******************mobile多于11位********************
+2019-08-23 10:00:58,082 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': '168012312341'}】
+2019-08-23 10:00:58,153 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:58,230 : ERROR  test_01_sendmcode :82  - 断言失败，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:58,233 : DEBUG  test_01_sendmcode :55  - ********************mobile为整型*********************
+2019-08-23 10:00:58,233 : DEBUG  test_01_sendmcode :57  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': 1680123}】
+2019-08-23 10:00:58,319 : INFO  test_01_sendmcode :59  - 请求返回结果为：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:58,400 : ERROR  test_01_sendmcode :82  - 断言失败，期望结果：【{"retCode": "0", "retInfo": "ok"}】，实际结果：【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:00:58,403 : DEBUG  test_01_sendmcode :43  - ================发送短信验证码接口-测试用例执行结束================
+2019-08-23 10:16:18,804 : DEBUG  test_02_register :37  - ===================注册接口测试用例开始执行===================
+2019-08-23 10:16:20,377 : DEBUG  test_02_register :59  - **********************发送验证码***********************
+2019-08-23 10:16:20,865 : DEBUG  test_02_register :61  - 请求参数为:【{'client_ip': '192.168.1.2', 'tmpl_id': '1', 'mobile': '13315962495'}】
+2019-08-23 10:17:12,722 : ERROR  test_02_register :114  - 断言失败：期望结果为【{"retCode": "0", "retInfo": "ok"}】，实际结果为【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:17:54,275 : DEBUG  test_02_register :37  - ===================注册接口测试用例开始执行===================
+2019-08-23 10:17:55,046 : DEBUG  test_02_register :59  - **********************发送验证码***********************
+2019-08-23 10:17:55,273 : DEBUG  test_02_register :61  - 请求参数为:【{'client_ip': '192.168.1.2', 'tmpl_id': '1', 'mobile': '18912465495'}】
+2019-08-23 10:18:33,317 : INFO  test_02_register :88  - 动态生成的号码【18912465495】获取的验证码为【532412】
+2019-08-23 10:18:44,863 : INFO  test_02_register :112  - 断言成功：期望结果为【{"retCode": "0", "retInfo": "ok"}】，实际结果为【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:18:51,174 : DEBUG  test_02_register :59  - ***********************注册成功***********************
+2019-08-23 10:18:51,175 : DEBUG  test_02_register :61  - 请求参数为:【{'verify_code': '532412', 'user_id': 'lyx_test177', 'channel_id': '1', 'pwd': '123123', 'mobile': '18912465495', 'ip': '192.168.1.2'}】
+2019-08-23 10:18:52,924 : ERROR  test_02_register :115  - 断言失败：期望结果为【{"retCode": "0", "retInfo": "ok"}】，实际结果为【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:19:05,984 : DEBUG  test_02_register :59  - ********************已注册号码再次注册*********************
+2019-08-23 10:19:05,985 : DEBUG  test_02_register :61  - 请求参数为:【{'verify_code': '532412', 'user_id': 'lyx_test7703', 'channel_id': '1', 'pwd': '123123', 'mobile': '18912465495', 'ip': '192.168.1.3'}】
+2019-08-23 10:19:21,870 : DEBUG  test_02_register :37  - ===================注册接口测试用例开始执行===================
+2019-08-23 10:19:22,611 : DEBUG  test_02_register :59  - **********************发送验证码***********************
+2019-08-23 10:19:22,836 : DEBUG  test_02_register :61  - 请求参数为:【{'client_ip': '192.168.1.2', 'tmpl_id': '1', 'mobile': '15908625495'}】
+2019-08-23 10:19:32,265 : INFO  test_02_register :88  - 动态生成的号码【15908625495】获取的验证码为【455461】
+2019-08-23 10:19:33,558 : INFO  test_02_register :112  - 断言成功：期望结果为【{"retCode": "0", "retInfo": "ok"}】，实际结果为【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:19:33,575 : DEBUG  test_02_register :59  - ***********************注册成功***********************
+2019-08-23 10:19:33,577 : DEBUG  test_02_register :61  - 请求参数为:【{'verify_code': '455461', 'user_id': 'lyx_test6131', 'channel_id': '1', 'pwd': '123123', 'mobile': '15908625495', 'ip': '192.168.1.2'}】
+2019-08-23 10:23:24,901 : DEBUG  test_02_register :37  - ===================注册接口测试用例开始执行===================
+2019-08-23 10:23:25,674 : DEBUG  test_02_register :59  - **********************发送验证码***********************
+2019-08-23 10:23:25,911 : DEBUG  test_02_register :61  - 请求参数为:【{'client_ip': '192.168.1.2', 'tmpl_id': '1', 'mobile': '13314763495'}】
+2019-08-23 10:23:26,405 : INFO  test_02_register :88  - 动态生成的号码【13314763495】获取的验证码为【683073】
+2019-08-23 10:23:26,578 : INFO  test_02_register :112  - 断言成功：期望结果为【{"retCode": "0", "retInfo": "ok"}】，实际结果为【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:23:26,584 : DEBUG  test_02_register :59  - ***********************注册成功***********************
+2019-08-23 10:23:26,585 : DEBUG  test_02_register :61  - 请求参数为:【{'verify_code': '683073', 'user_id': 'lyx_test7940', 'channel_id': '1', 'pwd': '123123', 'mobile': '13314763495', 'ip': '192.168.1.2'}】
+2019-08-23 10:24:38,425 : INFO  test_02_register :112  - 断言成功：期望结果为【{"retCode": "0", "retInfo": "ok"}】，实际结果为【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:24:38,429 : DEBUG  test_02_register :59  - ********************已注册号码再次注册*********************
+2019-08-23 10:24:38,430 : DEBUG  test_02_register :61  - 请求参数为:【{'verify_code': '683073', 'user_id': 'lyx_test5166', 'channel_id': '1', 'pwd': '123123', 'mobile': '13314763495', 'ip': '192.168.1.3'}】
+2019-08-23 10:36:12,458 : DEBUG  test_03_verified_user_auth :38  - ==================实名认证接口测试用例开始执行==================
+2019-08-23 10:36:13,147 : DEBUG  test_03_verified_user_auth :66  - **********************发送验证码***********************
+2019-08-23 10:36:13,355 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': '18911385495'}】
+2019-08-23 10:36:13,546 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:36:13,628 : DEBUG  test_03_verified_user_auth :108  - 动态生成的手机号码：【18911385495】，获取的验证码为：【451782】
+2019-08-23 10:36:13,742 : DEBUG  test_03_verified_user_auth :127  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:36:13,742 : DEBUG  test_03_verified_user_auth :66  - ***********************注册成功***********************
+2019-08-23 10:36:13,742 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'verify_code': '451782', 'user_id': 'lyx_test4726', 'channel_id': '1', 'pwd': '123123', 'mobile': '18911385495', 'ip': '192.168.1.2'}】
+2019-08-23 10:36:14,096 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:36:14,171 : DEBUG  test_03_verified_user_auth :115  - 注册成功用户的uid为：【128736684324】
+2019-08-23 10:36:14,239 : DEBUG  test_03_verified_user_auth :127  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:36:14,240 : DEBUG  test_03_verified_user_auth :66  - **********************实名认证成功**********************
+2019-08-23 10:36:14,240 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684324, 'true_name': '雅馨', 'cre_id': '37293019891012220X'}】
+2019-08-23 10:36:14,247 : DEBUG  test_03_verified_user_auth :66  - *********************用户Uid为空**********************
+2019-08-23 10:36:14,247 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': '', 'true_name': '雅馨', 'cre_id': '512501198008212200'}】
+2019-08-23 10:36:14,249 : DEBUG  test_03_verified_user_auth :66  - **********************真实姓名为空**********************
+2019-08-23 10:36:14,249 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684324, 'true_name': '', 'cre_id': '512501198008212200'}】
+2019-08-23 10:36:14,251 : DEBUG  test_03_verified_user_auth :66  - **********************身份证号为空**********************
+2019-08-23 10:36:14,252 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684324, 'true_name': '雅馨', 'cre_id': ''}】
+2019-08-23 10:36:14,254 : DEBUG  test_03_verified_user_auth :66  - *********************用户Uid不存在*********************
+2019-08-23 10:36:14,254 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 100, 'true_name': '雅馨', 'cre_id': '512501198008212200'}】
+2019-08-23 10:36:14,256 : DEBUG  test_03_verified_user_auth :56  - ==================实名认证接口测试用例执行结束==================
+2019-08-23 10:37:19,010 : DEBUG  test_03_verified_user_auth :38  - ==================实名认证接口测试用例开始执行==================
+2019-08-23 10:37:19,683 : DEBUG  test_03_verified_user_auth :66  - **********************发送验证码***********************
+2019-08-23 10:37:19,908 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': '17301249495'}】
+2019-08-23 10:37:20,006 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:37:20,085 : DEBUG  test_03_verified_user_auth :130  - 断言失败，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"faultcode": "soap:Server", "faultstring": "手机号码错误"}】
+2019-08-23 10:37:20,091 : DEBUG  test_03_verified_user_auth :66  - ***********************注册成功***********************
+2019-08-23 10:37:20,095 : DEBUG  test_03_verified_user_auth :66  - **********************实名认证成功**********************
+2019-08-23 10:37:20,097 : DEBUG  test_03_verified_user_auth :66  - *********************用户Uid为空**********************
+2019-08-23 10:37:20,097 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': '', 'true_name': '雅馨', 'cre_id': '512501198008212200'}】
+2019-08-23 10:37:20,099 : DEBUG  test_03_verified_user_auth :66  - **********************真实姓名为空**********************
+2019-08-23 10:37:20,104 : DEBUG  test_03_verified_user_auth :66  - **********************身份证号为空**********************
+2019-08-23 10:37:20,107 : DEBUG  test_03_verified_user_auth :66  - *********************用户Uid不存在*********************
+2019-08-23 10:37:20,107 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 100, 'true_name': '雅馨', 'cre_id': '512501198008212200'}】
+2019-08-23 10:37:20,109 : DEBUG  test_03_verified_user_auth :56  - ==================实名认证接口测试用例执行结束==================
+2019-08-23 10:37:50,245 : DEBUG  test_03_verified_user_auth :38  - ==================实名认证接口测试用例开始执行==================
+2019-08-23 10:37:50,868 : DEBUG  test_03_verified_user_auth :66  - **********************发送验证码***********************
+2019-08-23 10:37:51,089 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': '15904279495'}】
+2019-08-23 10:37:51,263 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:37:51,336 : DEBUG  test_03_verified_user_auth :108  - 动态生成的手机号码：【15904279495】，获取的验证码为：【308613】
+2019-08-23 10:37:51,414 : DEBUG  test_03_verified_user_auth :127  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:37:51,415 : DEBUG  test_03_verified_user_auth :66  - ***********************注册成功***********************
+2019-08-23 10:37:51,415 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'verify_code': '308613', 'user_id': 'lyx_test7985', 'channel_id': '1', 'pwd': '123123', 'mobile': '15904279495', 'ip': '192.168.1.2'}】
+2019-08-23 10:37:51,746 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:37:51,821 : DEBUG  test_03_verified_user_auth :115  - 注册成功用户的uid为：【128736684325】
+2019-08-23 10:37:51,911 : DEBUG  test_03_verified_user_auth :127  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:37:51,912 : DEBUG  test_03_verified_user_auth :66  - **********************实名认证成功**********************
+2019-08-23 10:37:51,912 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684325, 'true_name': '雅馨', 'cre_id': '37293019891012220X'}】
+2019-08-23 10:37:51,915 : DEBUG  test_03_verified_user_auth :66  - *********************用户Uid为空**********************
+2019-08-23 10:37:51,916 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': '', 'true_name': '雅馨', 'cre_id': '512501198008212200'}】
+2019-08-23 10:37:51,918 : DEBUG  test_03_verified_user_auth :66  - **********************真实姓名为空**********************
+2019-08-23 10:37:51,918 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684325, 'true_name': '', 'cre_id': '512501198008212200'}】
+2019-08-23 10:37:51,920 : DEBUG  test_03_verified_user_auth :66  - **********************身份证号为空**********************
+2019-08-23 10:37:51,920 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684325, 'true_name': '雅馨', 'cre_id': ''}】
+2019-08-23 10:37:51,922 : DEBUG  test_03_verified_user_auth :66  - *********************用户Uid不存在*********************
+2019-08-23 10:37:51,922 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 100, 'true_name': '雅馨', 'cre_id': '512501198008212200'}】
+2019-08-23 10:37:51,925 : DEBUG  test_03_verified_user_auth :56  - ==================实名认证接口测试用例执行结束==================
+2019-08-23 10:38:11,781 : DEBUG  test_03_verified_user_auth :38  - ==================实名认证接口测试用例开始执行==================
+2019-08-23 10:38:12,433 : DEBUG  test_03_verified_user_auth :66  - **********************发送验证码***********************
+2019-08-23 10:38:12,660 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': '15902340495'}】
+2019-08-23 10:38:12,837 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:38:12,912 : DEBUG  test_03_verified_user_auth :108  - 动态生成的手机号码：【15902340495】，获取的验证码为：【778264】
+2019-08-23 10:38:12,999 : DEBUG  test_03_verified_user_auth :127  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:38:13,000 : DEBUG  test_03_verified_user_auth :66  - ***********************注册成功***********************
+2019-08-23 10:38:13,000 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'verify_code': '778264', 'user_id': 'lyx_test1408', 'channel_id': '1', 'pwd': '123123', 'mobile': '15902340495', 'ip': '192.168.1.2'}】
+2019-08-23 10:38:13,322 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:38:13,394 : DEBUG  test_03_verified_user_auth :115  - 注册成功用户的uid为：【128736684326】
+2019-08-23 10:38:13,465 : DEBUG  test_03_verified_user_auth :127  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:38:13,466 : DEBUG  test_03_verified_user_auth :66  - **********************实名认证成功**********************
+2019-08-23 10:38:13,466 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684326, 'true_name': '雅馨', 'cre_id': '37293019891012220X'}】
+2019-08-23 10:38:13,754 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:38:13,915 : DEBUG  test_03_verified_user_auth :127  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:38:13,916 : DEBUG  test_03_verified_user_auth :66  - *********************用户Uid为空**********************
+2019-08-23 10:38:13,916 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': '', 'true_name': '雅馨', 'cre_id': '512501198008212200'}】
+2019-08-23 10:38:14,007 : DEBUG  test_03_verified_user_auth :66  - **********************真实姓名为空**********************
+2019-08-23 10:38:14,008 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684326, 'true_name': '', 'cre_id': '512501198008212200'}】
+2019-08-23 10:38:14,122 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "19001", "retInfo": "真实姓名错误"}】
+2019-08-23 10:38:14,200 : DEBUG  test_03_verified_user_auth :130  - 断言失败，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "19001", "retInfo": "真实姓名错误"}】
+2019-08-23 10:38:14,204 : DEBUG  test_03_verified_user_auth :66  - **********************身份证号为空**********************
+2019-08-23 10:38:14,204 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 128736684326, 'true_name': '雅馨', 'cre_id': ''}】
+2019-08-23 10:38:14,285 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "19001", "retInfo": "身份证号错误"}】
+2019-08-23 10:38:14,366 : DEBUG  test_03_verified_user_auth :130  - 断言失败，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "19001", "retInfo": "身份证号错误"}】
+2019-08-23 10:38:14,369 : DEBUG  test_03_verified_user_auth :66  - *********************用户Uid不存在*********************
+2019-08-23 10:38:14,369 : DEBUG  test_03_verified_user_auth :69  - 请求参数为：【{'uid': 100, 'true_name': '雅馨', 'cre_id': '512501198008212200'}】
+2019-08-23 10:38:14,465 : DEBUG  test_03_verified_user_auth :78  - 请求响应结果为:【{"retCode": "19001", "retInfo": "身份证号检验错误"}】
+2019-08-23 10:38:14,567 : DEBUG  test_03_verified_user_auth :130  - 断言失败，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "19001", "retInfo": "身份证号检验错误"}】
+2019-08-23 10:38:14,570 : DEBUG  test_03_verified_user_auth :56  - ==================实名认证接口测试用例执行结束==================
+2019-08-23 10:58:48,361 : DEBUG  test_03_verified_user_auth :36  - ==================实名认证接口测试用例开始执行==================
+2019-08-23 10:58:49,029 : DEBUG  test_03_verified_user_auth :64  - **********************发送验证码***********************
+2019-08-23 10:58:49,238 : DEBUG  test_03_verified_user_auth :67  - 请求参数为：【{'client_ip': '192.168.1.1', 'tmpl_id': '1', 'mobile': '13312564495'}】
+2019-08-23 10:58:49,429 : DEBUG  test_03_verified_user_auth :76  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:58:49,505 : DEBUG  test_03_verified_user_auth :106  - 动态生成的手机号码：【13312564495】，获取的验证码为：【739278】
+2019-08-23 10:58:49,583 : DEBUG  test_03_verified_user_auth :125  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:58:49,583 : DEBUG  test_03_verified_user_auth :64  - ***********************注册成功***********************
+2019-08-23 10:58:49,583 : DEBUG  test_03_verified_user_auth :67  - 请求参数为：【{'verify_code': '739278', 'user_id': 'lyx_test4077', 'channel_id': '1', 'pwd': '123123', 'mobile': '13312564495', 'ip': '192.168.1.2'}】
+2019-08-23 10:58:49,858 : DEBUG  test_03_verified_user_auth :76  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:58:49,936 : DEBUG  test_03_verified_user_auth :113  - 注册成功用户的uid为：【128736684327】
+2019-08-23 10:58:50,029 : DEBUG  test_03_verified_user_auth :125  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:58:50,030 : DEBUG  test_03_verified_user_auth :64  - **********************实名认证成功**********************
+2019-08-23 10:58:50,030 : DEBUG  test_03_verified_user_auth :67  - 请求参数为：【{'uid': 128736684327, 'true_name': '雅馨', 'cre_id': '511823198401109871'}】
+2019-08-23 10:58:50,176 : DEBUG  test_03_verified_user_auth :76  - 请求响应结果为:【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:58:50,328 : DEBUG  test_03_verified_user_auth :125  - 断言成功，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "0", "retInfo": "ok"}】
+2019-08-23 10:58:50,329 : DEBUG  test_03_verified_user_auth :64  - *********************用户Uid为空**********************
+2019-08-23 10:58:50,329 : DEBUG  test_03_verified_user_auth :67  - 请求参数为：【{'uid': '', 'true_name': '雅馨', 'cre_id': '511823198401103218'}】
+2019-08-23 10:58:50,457 : DEBUG  test_03_verified_user_auth :64  - **********************真实姓名为空**********************
+2019-08-23 10:58:50,458 : DEBUG  test_03_verified_user_auth :67  - 请求参数为：【{'uid': 128736684327, 'true_name': '', 'cre_id': '511823198401107155'}】
+2019-08-23 10:58:50,551 : DEBUG  test_03_verified_user_auth :76  - 请求响应结果为:【{"retCode": "19001", "retInfo": "真实姓名错误"}】
+2019-08-23 10:58:50,642 : DEBUG  test_03_verified_user_auth :128  - 断言失败，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "19001", "retInfo": "真实姓名错误"}】
+2019-08-23 10:58:50,646 : DEBUG  test_03_verified_user_auth :64  - **********************身份证号为空**********************
+2019-08-23 10:58:50,647 : DEBUG  test_03_verified_user_auth :67  - 请求参数为：【{'uid': 128736684327, 'true_name': '雅馨', 'cre_id': ''}】
+2019-08-23 10:58:50,742 : DEBUG  test_03_verified_user_auth :76  - 请求响应结果为:【{"retCode": "19001", "retInfo": "身份证号错误"}】
+2019-08-23 10:58:50,824 : DEBUG  test_03_verified_user_auth :128  - 断言失败，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "19001", "retInfo": "身份证号错误"}】
+2019-08-23 10:58:50,827 : DEBUG  test_03_verified_user_auth :64  - *********************用户Uid不存在*********************
+2019-08-23 10:58:50,828 : DEBUG  test_03_verified_user_auth :67  - 请求参数为：【{'uid': 100, 'true_name': '雅馨', 'cre_id': '511823198401107518'}】
+2019-08-23 10:58:50,924 : DEBUG  test_03_verified_user_auth :76  - 请求响应结果为:【{"retCode": "20042002", "retInfo": "用户不存在"}】
+2019-08-23 10:58:51,020 : DEBUG  test_03_verified_user_auth :128  - 断言失败，期望结果【{"retCode": "0", "retInfo": "ok"}】，实际结果【{"retCode": "20042002", "retInfo": "用户不存在"}】
+2019-08-23 10:58:51,025 : DEBUG  test_03_verified_user_auth :54  - ==================实名认证接口测试用例执行结束==================
